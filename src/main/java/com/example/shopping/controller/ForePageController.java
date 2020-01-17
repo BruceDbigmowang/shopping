@@ -13,6 +13,6 @@ public class ForePageController {
 
     @GetMapping(value = "/home")
     public String home(){
-        return "fore/home";
+        return "admin/home";
     }
 }

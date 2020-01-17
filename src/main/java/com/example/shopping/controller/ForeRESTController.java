@@ -12,16 +12,17 @@ import java.util.List;
 @RestController
 public class ForeRESTController {
     @Autowired
-    private CategoryService categoryService;
+    CategoryService categoryService;
     @Autowired
-    private ProductService productService;
+    ProductService productService;
 
     @GetMapping("/forehome")
-    public Object home(){
-        List<Category> cs = categoryService.list();
+    public Object home() {
+        List<Category> cs= categoryService.list();
         productService.fill(cs);
         productService.fillByRow(cs);
         categoryService.removeCategoryFromProduct(cs);
         return cs;
     }
+
 }

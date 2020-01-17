@@ -1,4 +1,4 @@
-<div th:fragment="html">
+<div th:fragment="html" xmlns:th="http://www.w3.org/1999/xhtml">
     <script>
         function showProductsAsideCategorys(cid){
             $("div.eachCategory[cid="+cid+"]").css("background-color","white");
@@ -78,7 +78,7 @@
                             vue.$nextTick(function(){
                                 //要等渲染结束之后，才来进行监听，否则他们都没有被创建出来，监听也没有意义呀
                                 homePageRegisterListeners();
-                            })
+                            });
                         });
                     }
                 },
@@ -90,7 +90,7 @@
                 }
             });
 
-        });
+        })
 
     </script>
 
