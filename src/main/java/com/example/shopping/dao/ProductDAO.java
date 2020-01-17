@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductDAO extends JpaRepository<Product, Integer> {
     Page<Product> findByCategory(Category category , Pageable pageable);
+    Page<Product> findByCategoryOrderById(Category category);
 }

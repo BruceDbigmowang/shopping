@@ -2,6 +2,7 @@ package com.example.shopping.service;
 
 import com.example.shopping.dao.CategoryDAO;
 import com.example.shopping.pojo.Category;
+import com.example.shopping.pojo.Product;
 import com.example.shopping.util.Page4Navigator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -43,5 +44,29 @@ public class CategoryService {
 
     public void update(Category bean){
         categoryDAO.save(bean);
+    }
+
+    public void removeCategoryFromProduct(List<Category> cs) {
+        for (Category category : cs) {
+            removeCategoryFromProduct(category);
+        }
+    }
+
+    public void removeCategoryFromProduct(Category category) {
+        List<Product> products =category.getProducts();
+        if(null!=products) {
+            for (Product product : products) {
+                product.setCategory(null);
+            }
+        }
+
+        List<List<Product>> productsByRow =category.getProductsByRow();
+        if(null!=productsByRow) {
+            for (List<Product> ps : productsByRow) {
+                for (Product p: ps) {
+                    p.setCategory(null);
+                }
+            }
+        }
     }
 }
