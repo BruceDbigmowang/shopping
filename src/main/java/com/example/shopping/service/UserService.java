@@ -36,4 +36,8 @@ public class UserService {
         userDao.save(user);
     }
 
+    public User get(String name , String password){
+        return userDao.findByNameAndPassword(name , password);
+    }
+
 }

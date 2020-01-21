@@ -26,4 +26,9 @@ public class ForePageController {
         return "admin/registerSuccess";
     }
 
+    @GetMapping(value="/login")
+    public String login(){
+        return "admin/login";
+    }
+
 }
