@@ -23,4 +23,17 @@ public class UserService {
         return new Page4Navigator<>(pageFromJpa , navigatePages);
     }
 
+    public User getByName(String name){
+        return userDao.findByName(name);
+    }
+
+    public boolean isExist(String name){
+        User user = getByName(name);
+        return null!=user;
+    }
+
+    public void add(User user){
+        userDao.save(user);
+    }
+
 }
