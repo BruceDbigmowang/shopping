@@ -1,4 +1,12 @@
-<div th:fragment="html" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="html">
+
+
+
+    <title>模仿天猫官网</title>
+    <div class="homepageDiv">
+        <div th:replace="include/fore/home/categoryAndcarousel::html" ></div>
+        <div th:replace="include/fore/home/homepageCategoryProducts::html" ></div>
+    </div>
     <script>
         function showProductsAsideCategorys(cid){
             $("div.eachCategory[cid="+cid+"]").css("background-color","white");
@@ -78,7 +86,7 @@
                             vue.$nextTick(function(){
                                 //要等渲染结束之后，才来进行监听，否则他们都没有被创建出来，监听也没有意义呀
                                 homePageRegisterListeners();
-                            });
+                            })
                         });
                     }
                 },
@@ -88,15 +96,16 @@
                         return value.split(" ")[0]; //根据空格拆分，并且只获取数组第一个值
                     }
                 }
-            });
+            })
+
 
         })
 
-    </script>
 
-    <title>模仿天猫官网</title>
-    <div class="homepageDiv">
-        <div th:replace="include/fore/home/categoryAndcarousel::html" ></div>
-        <div th:replace="include/fore/home/homepageCategoryProducts::html" ></div>
-    </div>
+
+    </script>
 </div>
+
+
+
+

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ProductService {
+public class ProductService  {
 
     @Autowired ProductDAO productDAO;
     @Autowired CategoryService categoryService;
@@ -74,4 +74,5 @@ public class ProductService {
     public List<Product> listByCategory(Category category){
         return productDAO.findByCategoryOrderById(category);
     }
+
 }

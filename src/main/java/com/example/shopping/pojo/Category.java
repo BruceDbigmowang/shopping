@@ -6,14 +6,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Category")
+@Table(name = "category")
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
+
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
-    @Column(name = "name")
+
     String name;
 
     @Transient
@@ -24,7 +25,6 @@ public class Category {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -32,7 +32,6 @@ public class Category {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }

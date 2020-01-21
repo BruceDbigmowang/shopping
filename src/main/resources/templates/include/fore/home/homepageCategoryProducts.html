@@ -1,4 +1,4 @@
-<div th:fragment="html" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="html">
     <div class="homepageCategoryProducts">
         <div class="eachHomepageCategoryProducts" v-for="c in categories">
             <div class="left-mark"></div>
@@ -10,13 +10,13 @@
                 </a>
 
                 <a class="productItemDescLink" href="'product?pid='+p.id">
-                                    <span class="productItemDesc">[热销]
-                                    {{p.name | subStringFilter(0,20)}}
-                                    </span>
+									<span class="productItemDesc">[热销]
+									{{p.name | subStringFilter(0,20)}}
+									</span>
                 </a>
                 <span class="productPrice">
-                                    {{p.promotePrice | formatMoneyFilter}}
-                                </span>
+									{{p.promotePrice | formatMoneyFilter}}
+								</span>
             </div>
             <div style="clear:both"></div>
         </div>
